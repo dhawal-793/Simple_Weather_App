@@ -33,9 +33,3 @@ npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
-## Deployed Vesion
-
-This is project is hosted on Vercel.com
-You can view it => [here](https://gia-nextjs-frontend-assignment.vercel.app/)
