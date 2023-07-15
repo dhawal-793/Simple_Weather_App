@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "Simple Weather app",
   "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "author": "Dhawal Vijayvargiya",
   "license": "ISC",
-
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cross-fetch": "^3.1.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  },
   "devDependencies": {}
 }
