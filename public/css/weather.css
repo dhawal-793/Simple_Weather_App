@@ -1,0 +1,162 @@
+body {
+  text-align: center;
+  margin: auto;
+  background-image: linear-gradient(
+    25deg,
+    rgb(161, 100, 211) 50%,
+    rgb(117, 228, 250) 50%
+  );
+  height: 100vh;
+  width: 100vw;
+}
+.heading {
+  margin: 0;
+  font-size: 1rem;
+  color: rgb(204, 0, 255);
+  padding: 2rem;
+}
+.box{
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  width:max-content;
+  height:8vh;
+  /* border: 2px solid green; */
+}
+input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: blue;
+  padding: 0.2rem .8rem;
+  padding-right: 3rem;
+  border-bottom: 3px solid hsl(273, 100%, 50%);
+  width:max-content;
+  position: absolute;
+  left:50%;
+  top:30%;
+  transform: translateX(-50%);
+}
+input:focus,
+input:hover {
+  background-color: transparent;
+  outline: none;
+}
+button[name="search"] {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  /* color: blue; */
+  /* padding: 0.4rem; */
+  position: absolute;
+  top:35%;
+  right:-112px;
+}
+.circle{
+  width: 6px;
+  height: 6px;
+  border:2px solid blue;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+}
+.handle{
+  position:absolute;
+  width: 1px;
+  background-color:blue;
+  height:8px;
+  bottom:-7px;
+  right:-2px;
+  transform: rotate(-40deg);
+
+}
+
+.result>form{
+  position: absolute;
+  top:-5px;
+  right:10px;
+  width:fit-content;
+  /* border:2px solid red;
+  box-sizing: border-box; */
+  
+}
+.cancel{
+  background-color: transparent;
+  border:none;
+  outline: none;;
+  cursor: pointer;
+  padding: 5px;
+  position:relative;
+  /* border: 2px solid red; */
+  
+}
+.cancel::before,.cancel::after{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  content:"";
+  width:1px;
+  height: 10px;
+  background-color: #fff;
+  
+}
+.cancel::before{
+transform: rotate(45deg);
+}
+.cancel::after{
+transform: rotate(-45deg);
+}
+
+.cancel::before:hover,.cancel::after:hover{
+  background-color:aquamarine;
+  transform: scale(1.2);
+}
+.result{
+  /* margin-top:50px; */
+  box-sizing: border-box;
+  position:absolute;
+  top:60%;
+  left:50%;
+  width:80vw;
+  transform: translate(-50%,-50%);
+  height:max-content;
+  min-height:30vh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  color:rgb(130, 0, 252);
+  align-items: center;
+}
+
+.missing {
+  color: #ff2727;
+}
+/* .found {
+  color: rgb(0, 255, 234);
+} */
+.city-name {
+  color: #00d9ff;
+}
+.found div {
+  display: flex;
+  align-items: center;
+}
+.found img {
+  width: 50px;
+  height: 50px;
+}
+.invalid {
+  color: #ff2727;
+  }
+
+
+  @media (max-width:468px) {
+    .header{
+      font-size: 2rem;
+    }
+  }
