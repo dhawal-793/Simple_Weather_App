@@ -2,11 +2,14 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const https = require("https")
+const path = require("path");
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'));
+const viewsPath = path.join(__dirname, "views");
 app.set('view engine', 'ejs');
+app.set("views", viewsPath);
 const port = process.env.PORT || 3000;
 
 // const fetchDate = () => {
