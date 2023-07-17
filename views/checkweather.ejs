@@ -3,79 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="/assets/weather.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/assets/weather.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkweather</title>
-    <link rel="stylesheet" href="/css/weather.css" />
-    <script
-      src="https://kit.fontawesome.com/2082010889.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="/css/weather.css">
+    <script src="https://kit.fontawesome.com/2082010889.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <h1 class="heading">Check Weather of your city</h1>
     <div class="box">
-      <form action="/" method="post">
+      <form action="/" method="post" >
         <input
-          type="text"
-          name="city"
-          placeholder="Enter Your City Name"
-          autocomplete="off"
-          required
-          value="<%"
-          ="city"
-          %
-        />
+        type="text"
+        name="city"
+        placeholder="Enter Your City Name"
+        autocomplete=off
+        required
+        value= <%= city %>
         >
-        <button type="submit" name="search" style="cursor: pointer">
-          <div class="circle">
-            <div class="handle"></div>
-          </div>
+        <button type="submit" name="search" style="cursor: pointer" >
+         <div class="circle">
+          <div class="handle"></div>
+         </div>
         </button>
       </form>
     </div>
     <% if(search!==false){ %>
-    <div class="result">
-      <form action="/cancel" method="post">
-        <button type="submit" class="cancel" value="x" name="cancel"></button>
-      </form>
+      <div class=" result">
+        <form action="/cancel" method="post">
+          <button type="submit"class="cancel" value="x" name="cancel">
+          </button>
+        </form>
 
-      <% if(value==='missing'){ %>
-      <div class="missing">
-        <h1>OPPS! City Name is Missing</h1>
-        <h3>Please enter the name of city you want to check weather for...</h3>
-      </div>
-      <% } %> <% if(value==='invalid'){ %>
-      <div class="invalid">
-        <h1>City Name can only contain alphabets</h1>
-        <h3>Please enter the name of city you want to check weather for...</h3>
-      </div>
-      <% } %> <% if(value==='found'){ %>
-      <div class="found">
-        <h1>
-          The Temperature in <span class="city-name"> <%=cityname %> </span>
-          is <%= temperature %> degrees Celcius
-        </h1>
-        <div>
-          <h5>The weather is currently<%= weather %></h5>
-          <img src="<%" ="icon" % /> />
-        </div>
-      </div>
-      <%} %> <% if(value==='wrong'){ %>
+        <% if(value==='missing'){ %>
+          <div class="missing">
+            <h1>OPPS! City Name is Missing</h1>
+            <h3>Please enter the name of city you want to check weather for...</h3>
+          </div>
+        <% } %>
 
-      <div class="invalid">
-        <h1>OPPS! Can not find city Name</h1>
-        <h3>Please enter a valid city name...</h3>
-      </div>
-      <%} %> <% if(value==='server-error'){ %>
+        <% if(value==='invalid'){ %>
+          <div class="invalid">
+            <h1>City Name can only contain alphabets</h1>
+            <h3>Please enter the name of city you want to check weather for...</h3>
+          </div>
+        <% } %> 
 
-      <div class="invalid">
-        <h1>OPPS! Some Error Occured</h1>
-        <h3>Please try again after some time...</h3>
+        <% if(value==='found'){ %>
+          <div class="found">
+            <h1>
+              The Temperature in <span class="city-name"> <%=cityname %> </span>
+              is <%= temperature %> degrees Celcius
+            </h1>
+            <div>
+              <h5>The weather is currently<%= weather %></h5>
+              <img src= <%=icon %> />
+            </div>
+          </div>
+        <%} %> 
+      
+        <% if(value==='wrong'){ %>
+          <div class="invalid">
+            <h1>OPPS! Can not find city Name</h1>
+            <h3>Please enter a valid city name...</h3>
+          </div>
+        <%} %> 
+
+        <% if(value==='server-error'){ %>
+          <div class="invalid">
+            <h1>OPPS! Some Error Occured</h1>
+            <h3>Please try again after some time...</h3>
+          </div>
+        <%} %> 
+        
       </div>
-      <%} %>
-    </div>
     <%} %>
   </body>
 </html>
